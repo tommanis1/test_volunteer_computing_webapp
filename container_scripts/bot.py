@@ -4,6 +4,10 @@ import os
 import time
 import sys
 from selenium.webdriver import FirefoxOptions
+from pyvirtualdisplay import Display
+
+display = Display(visible=0, size=(800, 600))
+display.start()
 PROJECT = 3
 class Bot():
     def __init__(self, id):
@@ -38,7 +42,7 @@ def main():
     b.sign_up()
     b.log_in()
     time.sleep(1)
-    b.run_project()
+    # b.run_project()
 
 if __name__ == "__main__":
     main()
