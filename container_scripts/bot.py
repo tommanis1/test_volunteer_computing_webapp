@@ -3,13 +3,16 @@ from selenium.webdriver.common.by import By
 import os
 import time
 import sys
+from selenium.webdriver import FirefoxOptions
 PROJECT = 3
 class Bot():
     def __init__(self, id):
-        self.driver = webdriver.Firefox(executable_path=os.path.join(os.getcwd(), "geckodriver"))
+        options = FirefoxOptions()
+        options.headless = True
+        self.driver = webdriver.Firefox(executable_path=os.path.join(os.getcwd(), "geckodriver"), options=options)
         self.id = id
         self.project = PROJECT
-        self.base_url = "http://146.190.25.75:3601"
+        self.base_url = "http://146.190.25.75:3601/"
     def log_in(self):
         self.driver.get(self.base_url + "login")
     #     # fill user and password

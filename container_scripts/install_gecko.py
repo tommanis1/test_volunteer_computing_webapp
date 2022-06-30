@@ -1,12 +1,8 @@
 import subprocess
 import os
 # sudo -E  python installSelenium.py 
-def install_module(module):
-    if subprocess.run(f"pip show {module}", shell=True, capture_output=True, text=True).returncode != 0:
-        subprocess.run(f"pip install {module}", shell=True)
  
 def installGecko():
-    install_module("bs4"), install_module("requests"), install_module("wget")
     from bs4 import BeautifulSoup
     import requests
     import wget
